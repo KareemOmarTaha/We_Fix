@@ -6,25 +6,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>wefixhpage</title>
+    <title>WeFix</title>
 </head>
 <body>
 <nav class="navbar fixed navbar-expand-sm navbar-warning bg-warning">
   <div class="container-fluid">
-    <img src="" alt="">
+    <img class="logoIMG" src="{% static 'images/wefix.jpg' %}" alt="wefix-Logo">
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav">
         <li class="nav-item-text-primary-mb-2">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="/home">Home</a>
         </li>
         <li class="nav-item-text-primary-mb-2">
-          <a class="nav-link" href="#">category</a>
+          <a class="nav-link" href="/category">category</a>
         </li>
         <li class="nav-item-text-primary ">
-          <a class="nav-link" href="#">about us</a>
+          <a class="nav-link" href="/about-us">about us</a>
       </ul>
       <div class="login mb-4">
-        <a href="login">login</a>
+        <a href="/login">login</a>
       </div>
     </div>
   </div>
@@ -36,8 +36,6 @@ class="container">
       <h5 class="card-title">Card title</h5>
       <h6 class="card-subtitle mb-5 text-body-secondary">Card subtitle</h6>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
     </div>
   </div>
 
