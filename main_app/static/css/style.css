@@ -1,0 +1,53 @@
+.logo-img {
+    width: 150px;
+}
+
+.log-in {
+    text-decoration: none;
+    color: #155263;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#nav-link {
+    color: #155263;
+    font-weight: bold;
+}
+
+.white-space {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+
+.slogan {
+    margin-top: 100px;
+}
+
+#card-title {
+    font-size: 50px;
+    text-align: center;
+    color: #155263;
+}
+
+.card-name {
+    font-size: 120px;
+    text-align: center;
+    color: #ffc107;
+}
+
+.socail {
+    display: flex;
+    justify-content: flex-start;
+    align-items: end;
+}
+
+.social-img {
+    margin-top:6%;
+    margin-left: 1%;
+    width: 40px;
+}
+
+#facebook{
+    width: 60px;
+}
