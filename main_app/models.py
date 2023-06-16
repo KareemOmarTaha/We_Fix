@@ -24,7 +24,8 @@ def edit_user_info(request):
     user.first_name = request.POST['fname']
     user.last_name = request.POST['lname']
     user.email = request.POST['email']
-    user.address = request.POST['phone']
+    user.address = request.POST['address']
+    user.phone_number = request.POST['phone']
     user.save()
 
 def delete_user(request):
