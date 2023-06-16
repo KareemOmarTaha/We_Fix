@@ -1,0 +1,25 @@
+.containter {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo-img{
+    width: 15%;
+}
+
+.reg , .login {
+    border: 2px solid black;
+    border-radius: 10px;
+    border-color: #155263;
+    padding: 50px;
+    height: fit-content;
+}
+
+.head {
+    text-align: center;
+    color: #155263;
+}
