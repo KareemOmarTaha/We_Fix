@@ -1,5 +1,8 @@
-from django.shortcuts import render , HttpResponse
+from django.shortcuts import render , redirect
 
 def index (request):
-    return HttpResponse('riziq fuck off')
+    return render(request , 'welcome.html')
 
+def logout(request):
+    del request.session['userid']
+    return redirect('/')
