@@ -14,3 +14,7 @@ def about_us (request):
 
 def login (request):
     return redirect ('/log-in')
+
+def logout(request):
+    del request.session['userid']
+    return redirect('/')

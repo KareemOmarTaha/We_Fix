@@ -30,7 +30,11 @@
               <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
             </li>
           </ul>
+          {%if request.session.userid%}
+          <a href="/logout" class="log-in">Log Out</a>
+          {%else%}
           <a href="/log-in" class="log-in">Login</a>
+          {%endif%}
         </div>
       </div>
     </nav>
