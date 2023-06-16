@@ -13,4 +13,4 @@ def about_us (request):
     return redirect ('/')
 
 def login (request):
-    return redirect ('/')
+    return redirect ('/log-in')
