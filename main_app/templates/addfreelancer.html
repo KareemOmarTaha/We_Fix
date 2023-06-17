@@ -17,36 +17,43 @@
     </div>
     <h2 class="head">Freelancer Regestration</h2>
     <div class="container">
-            <form action="/addfreelancer" method="post">
-                {%csrf_token%}
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">First Name</label>
-                    <input name="fname" type="text" class="form-control" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                    <input name="lname" type="text" class="form-control" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                    <input name="phone" type="text" class="form-control" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Experience</label>
-                    <input name="exp" type="number" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Work Field</label>
-                    <select name="category" class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="Blacksmith">Blacksmith</option>
-                        <option value="Carpenter">Carpenter</option>
-                        <option value="Plumper">Plumper</option>
-                        <option value="Tiler">Tiler</option>
-                        <option value="Electrician">Electrician</option>
-                        <option value="aluminium technician">aluminium technician</option>
-                        </select>
-                </div>
-                <button id="free-btn" type="submit" class="btn btn-warning">Add Freelancer</button>
-            </form>
+        <form action="/addfreelancer" method="post">
+            {%csrf_token%}
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First Name</label>
+                <input name="fname" type="text" class="form-control" aria-describedby="emailHelp">
             </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                <input name="lname" type="text" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                <input name="phone" type="text" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Experience</label>
+                <input name="exp" type="number" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Work Field</label>
+                <select name="category" class="form-select" aria-label="Default select example">
+                    <option selected>Open this select menu</option>
+                    <option value="Blacksmith">Blacksmith</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Plumper">Plumper</option>
+                    <option value="Tiler">Tiler</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="aluminium technician">aluminium technician</option>
+                </select>
+            </div>
+            <button id="free-btn" type="submit" class="btn btn-warning">Add Freelancer</button>
+        </form>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>

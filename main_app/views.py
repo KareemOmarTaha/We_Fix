@@ -2,6 +2,7 @@ from django.shortcuts import render , redirect
 from . import models
 from login_app.models import User
 from main_app.models import Freelancer
+from django.contrib import messages
 
 def index (request):
     if 'userid' not in request.session:
@@ -94,7 +95,12 @@ def register_freelancer (request):
         return redirect ('/')
 
 def add_freelancer(request):
-        
+    errors = Freelancer.objects.basic_validator(request.POST)
+    if len(errors) > 0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/registerfreelancer')
+    else:
         models.add_freelancer_models(request)
         return redirect('/')
 

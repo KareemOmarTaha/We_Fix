@@ -53,15 +53,13 @@ class UserManager(models.Manager):
 # Login Validation
 
     def login(self, postData):
-        messages = {}
-
+        errors = {}
         if len(postData['person_email']) < 1:
-            messages['person_email'] = 'Email is required!'
+            errors['person_email'] = 'Email is required!'
 
         if len(postData['password_email']) < 1:
-            messages['password_email'] = 'Password is required!'
-
-        return messages
+            errors['password_email'] = 'Password is required!'
+        return errors
 
 class User(models.Model):
     first_name = models.CharField(max_length=45)

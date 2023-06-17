@@ -1,5 +1,24 @@
 from django.db import models
 from login_app.models import User
+import re
+
+class FreelancerManager(models.Manager):
+    def basic_validator(self, postData):
+        errors = {}
+        Phone_REGEX = re.compile(r'^[0-9]+$')
+        
+        if len(postData['fname']) < 3:
+            errors["fname"] = "Freelancer first name should be at least 3 characters"
+        if len(postData['lname']) < 3:
+            errors["lname"] = "Freelancer last name should be at least 3 characters"
+        if len(postData['phone']) != 10:
+            errors["phone"] = "Phone Number Should contain 10 numbers"
+        if not Phone_REGEX.match(postData['phone']):
+            errors['email'] = "Invalid Phone Number!"
+        if postData['exp'] < "0" :
+            errors["exp"] = "Invalide number of experience years"
+        return errors
+
 
 class Category(models.Model):
     name = models.CharField(max_length=45)
@@ -9,12 +28,13 @@ class Freelancer(models.Model):
     first_name = models.CharField(max_length=45)
     last_name = models.CharField(max_length=45)
     phone_number = models.CharField(max_length=10)
-    experience = models.IntegerField(default=0)
+    experience = models.PositiveIntegerField(default=0)
     category = models.ForeignKey(Category , related_name="freelancers" , on_delete=models.DO_NOTHING )
     users_who_like = models.ManyToManyField(User, related_name='liked_freelancer')
     users_who_dislike = models.ManyToManyField(User, related_name='disliked_freelancer')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    objects = FreelancerManager()
 
 
 def user_info(request):
