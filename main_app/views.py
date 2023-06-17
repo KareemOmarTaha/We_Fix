@@ -18,8 +18,15 @@ def home (request):
         return redirect ('/')
 
 def category (request):
-    return redirect('/')
+    if 'userid' not in request.session:
+        return redirect('/')
+    else: 
+        context = {
+            "categories" : models.category_modles() ,
 
+        }
+        return render (request , 'categories.html' , context)
+    
 def about_us (request):
     return redirect ('/')
 
@@ -117,3 +124,12 @@ def edit_freelancer(request , id):
 def editing_freelancer (request):
     models.editing_freelance_models(request)
     return redirect ('/showfreelancer')
+
+def list_cat(request , id):
+    if 'userid' not in request.session:
+        return redirect('/')
+    else:
+        context = {
+    "all_cats":models.list_cat_models(id)
+    }
+        return render (request , "list-cat.html" , context)

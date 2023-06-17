@@ -93,3 +93,20 @@ color: #155263;
     border-radius: 5px;
     padding: 2rem;
 }
+
+/* Categories Page  */
+.categories a {
+    text-decoration: none;
+}
+
+.categories .card-title {
+    color: #155263;
+}
+
+.card {
+    margin: 5px;
+}
+
+.see_more_btn {
+    text-decoration: none;
+}

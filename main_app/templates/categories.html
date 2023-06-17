@@ -69,35 +69,70 @@
             </div>
         </div>
     </nav>
-    <div class="user_info">
-        <form action="/editprofile" method="post">
-            {%csrf_token%}
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">First Name</label>
-                <input value="{{users.first_name}}" name="fname" type="text" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Last Name</label>
-                <input value="{{users.last_name}}" name="lname" type="text" class="form-control" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input value="{{users.email}}" name="email" type="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Phone Number</label>
-                <input value="{{users.phone_number}}" name="phone" type="text" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Address</label>
-                <input  name="address" type="text" class="form-control"  value="{{users.address}}" id="exampleInputPassword1">
-            </div>
-            <button type="submit" id="edit_btn" class="btn btn-warning">Edit</button>
-            <a href="/deleteuser" class="delete_btn">Delete Account</a>
-        </form>
-        
+    <div class="categories">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <a href="/category/1">
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/1.jpg' %}" class="card-img-top h-100" alt="Blacksmith">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Blacksmith</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/category/3">
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/2.jpg' %}" class="card-img-top h-100" alt="Carpenter">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Carpenter</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/category/4">
+                <div class="col">
+                    <div id="plumper" class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/3.jpg' %}" class="card-img-top h-100" alt="Plumper">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Plumper</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/category/7">
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/4.jpg' %}" class="card-img-top h-100" alt="Tiler">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Tiler</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/category/8">
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/5.jpg' %}" class="card-img-top h-100" alt="Electrician">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Electrician</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="/category/9">
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <img src="{% static 'img/categories/6.jpg' %}" class="card-img-top h-100" alt="Aluminium Technician">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">Aluminium Technician</h1>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

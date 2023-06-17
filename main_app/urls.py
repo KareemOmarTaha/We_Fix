@@ -22,4 +22,5 @@ urlpatterns = [
     path ('deletefreelancer/<int:id>' , views.delete_freelancer) , 
     path ('editfreelancer/<int:id>' , views.edit_freelancer),
     path ('editingfreelancer' , views.editing_freelancer),
+    path ('category/<int:id>' , views.list_cat) , 
 ]

@@ -76,3 +76,9 @@ def editing_freelance_models(request):
     freelancer.experience = request.POST['exp']
     freelancer.category = Category.objects.get(name = request.POST['category'])
     freelancer.save()
+
+def category_modles():
+    return Category.objects.all()
+
+def list_cat_models(id):
+    return Freelancer.objects.filter(category = Category.objects.get(id=id))
