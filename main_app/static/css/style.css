@@ -73,3 +73,23 @@
     text-decoration: none;
     color: black;
 }
+
+/* addfreelancer Page  */
+
+.head {
+text-align: center;
+color: #155263;
+}
+
+.free-img {
+    width: 15%;
+}
+.free-logo {
+    text-align: center;
+}
+
+.container{
+    border: 2px solid #155263;
+    border-radius: 5px;
+    padding: 2rem;
+}

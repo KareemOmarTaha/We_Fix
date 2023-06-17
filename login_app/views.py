@@ -33,6 +33,17 @@ def logining(request):
     
         if bcrypt.checkpw(request.POST['password_email'].encode(), logged_user.password.encode()):
             request.session['userid'] = logged_user.id
-
-            return redirect('/')
+            if logged_user.id == 1: 
+                return redirect ('/admin')
+            else:
+                return redirect('/')
     return redirect('/log-in')
+
+
+def admin(request):
+    if 'userid' not in request.session:
+        return redirect ('/')
+    if request.session['userid'] == 1 : 
+        return render (request , 'admin.html')
+    else:
+        return redirect('/')

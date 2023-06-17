@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login & Regestration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="free-logo">
+        <a href="/"><img src="{%static 'img/Logo.png'%}" alt="logo" class="free-img"></a>
+    </div>
+    <h2 class="head">Freelancer Regestration</h2>
+    <div class="container">
+            <form action="/addfreelancer" method="post">
+                {%csrf_token%}
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input name="fname" type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input name="lname" type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+                    <input name="phone" type="text" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Experience</label>
+                    <input name="exp" type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Work Field</label>
+                    <select name="category" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="Blacksmith">Blacksmith</option>
+                        <option value="Carpenter">Carpenter</option>
+                        <option value="Plumper">Plumper</option>
+                        <option value="Tiler">Tiler</option>
+                        <option value="Electrician">Electrician</option>
+                        <option value="aluminium technician">aluminium technician</option>
+                        </select>
+                </div>
+                <button id="free-btn" type="submit" class="btn btn-warning">Add Freelancer</button>
+            </form>
+            </div>
