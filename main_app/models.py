@@ -3,6 +3,7 @@ from login_app.models import User
 
 class Category(models.Model):
     name = models.CharField(max_length=45)
+    image = models.CharField(max_length=255 , default='yes')
 
 class Freelancer(models.Model):
     first_name = models.CharField(max_length=45)
@@ -10,6 +11,8 @@ class Freelancer(models.Model):
     phone_number = models.CharField(max_length=10)
     experience = models.IntegerField(default=0)
     category = models.ForeignKey(Category , related_name="freelancers" , on_delete=models.DO_NOTHING )
+    users_who_like = models.ManyToManyField(User, related_name='liked_freelancer')
+    users_who_dislike = models.ManyToManyField(User, related_name='disliked_freelancer')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -82,3 +85,8 @@ def category_modles():
 
 def list_cat_models(id):
     return Freelancer.objects.filter(category = Category.objects.get(id=id))
+
+def free_details_models(id):
+    return Freelancer.objects.get(id = id)
+
+

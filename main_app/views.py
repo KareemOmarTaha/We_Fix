@@ -1,5 +1,7 @@
 from django.shortcuts import render , redirect
 from . import models
+from login_app.models import User
+from main_app.models import Freelancer
 
 def index (request):
     if 'userid' not in request.session:
@@ -18,14 +20,11 @@ def home (request):
         return redirect ('/')
 
 def category (request):
-    if 'userid' not in request.session:
-        return redirect('/')
-    else: 
-        context = {
+    context = {
             "categories" : models.category_modles() ,
 
         }
-        return render (request , 'categories.html' , context)
+    return render (request , 'categories.html' , context)
     
 def about_us (request):
     return redirect ('/')
@@ -126,10 +125,38 @@ def editing_freelancer (request):
     return redirect ('/showfreelancer')
 
 def list_cat(request , id):
-    if 'userid' not in request.session:
-        return redirect('/')
-    else:
-        context = {
+    context = {
     "all_cats":models.list_cat_models(id)
     }
-        return render (request , "list-cat.html" , context)
+    return render (request , "list-cat.html" , context)
+
+def free_details(request , id):
+    if 'userid' not in request.session:
+        return redirect ('/log-in')
+    else:
+        context = {
+        "free_details" : models.free_details_models(id)
+    }
+        return render (request , 'free-details.html', context)
+
+def like_freelancer(request, id):
+        logged_user = User.objects.get(id = request.session['userid'])
+        liked_freelancer = Freelancer.objects.get(id = id)
+        if liked_freelancer in logged_user.liked_freelancer.all():
+            logged_user.liked_freelancer.remove(liked_freelancer)
+        else:
+            logged_user.liked_freelancer.add(liked_freelancer)
+        if liked_freelancer in logged_user.disliked_freelancer.all():
+            logged_user.disliked_freelancer.remove(liked_freelancer)
+        return redirect(f'/freedetails/{liked_freelancer.id}')
+
+def dislike_freelancer(request, id):
+        logged_user = User.objects.get(id = request.session['userid'])
+        disliked_freelancer = Freelancer.objects.get(id = id)
+        if disliked_freelancer in logged_user.disliked_freelancer.all():
+            logged_user.disliked_freelancer.remove(disliked_freelancer)
+        else:
+            logged_user.disliked_freelancer.add(disliked_freelancer)
+        if disliked_freelancer in logged_user.liked_freelancer.all():
+            logged_user.liked_freelancer.remove(disliked_freelancer)
+        return redirect(f'/freedetails/{disliked_freelancer.id}')

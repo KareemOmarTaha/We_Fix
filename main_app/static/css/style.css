@@ -1,4 +1,9 @@
 /* main Page  */
+/* body {
+    background-image: url('/static/img/main-pic.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
 .logo-img {
     width: 150px;
 }
@@ -95,6 +100,7 @@ color: #155263;
 }
 
 /* Categories Page  */
+
 .categories a {
     text-decoration: none;
 }
@@ -109,4 +115,62 @@ color: #155263;
 
 .see_more_btn {
     text-decoration: none;
+}
+
+.card-body h3  h4  h5 {
+    color: #155263;
+}
+
+
+.free-details {
+display: flex;
+justify-content: center;
+}
+
+#card_body > * {
+    color: #155263;
+}
+
+/* Vote  */
+.vote {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10%;
+    margin-top: 10px;
+}
+@media all and (max-width: 1000px) {
+    .card {
+        width: 90%;
+        margin: 1%;
+    }
+}
+@media all and (max-width: 720px) {
+.vote {
+    width: 15%;
+}
+}
+.calendar-img {
+    width: 27px;
+    margin-right: 5px;
+    padding-bottom: 7px;
+}
+.vote img {
+    width: 30px;
+}
+.vote span {
+    font-size: 0.8rem;
+}
+.shadow{
+    position: relative;
+    bottom: 5px;
+}
+.down{
+    position: relative;
+    top: 5px;
+}
+.settings_vote{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

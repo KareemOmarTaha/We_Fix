@@ -23,4 +23,8 @@ urlpatterns = [
     path ('editfreelancer/<int:id>' , views.edit_freelancer),
     path ('editingfreelancer' , views.editing_freelancer),
     path ('category/<int:id>' , views.list_cat) , 
+    path ('freedetails/<int:id>', views.free_details),
+    path('like_freelancer/<int:id>', views.like_freelancer),
+    path('dislike_freelancer/<int:id>', views.dislike_freelancer),
+
 ]

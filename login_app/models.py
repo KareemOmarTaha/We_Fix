@@ -37,13 +37,13 @@ class UserManager(models.Manager):
             errors['passwords_match'] = 'Password must match Confirm password!'
         
         # Validating First Name 
-        if len(postData['fname']) < 4:
+        if len(postData['fname']) < 3:
             errors["fname"] = "First name should be at least 3 characters"
         elif not FISRT_NAME_REGEX.match(postData['fname']):
             errors["fname"] = "First Name only conatains letter"
         
         # Validating Last Name
-        if len(postData['lname']) < 4:
+        if len(postData['lname']) < 3:
             errors["lname"] = "Last Name should be at least 3 characters"
         elif not LAST_NAME_REGEX.match(postData['lname']):
             errors["lname"] = "Last Name only conatains letter"
