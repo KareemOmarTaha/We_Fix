@@ -73,11 +73,14 @@
     </nav>
     <div>
         {% for cat in all_cats %}
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" style="max-width: 400px;">
             <div class="row g-0">
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">{{cat.first_name}} {{cat.last_name}}</h5>
+                        <h4 class="card-title">{{cat.first_name}} {{cat.last_name}}</h4>
+                        <h5>{{cat.category.name}}</h5>
+                        <h6># of People Recommending : {{cat.users_who_like.count}}</h6>
+                        <h6># of People Dissuading : {{cat.users_who_dislike.count}}</h6>
                         <p class="card-text"></p>
                         <a class="btn btn-outline-warning" href="/freedetails/{{cat.id}}">See More</a>
                     </div>
