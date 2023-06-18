@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeFix</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-warning">
+        <div class="container-fluid">
+            <a href="/"><img class="logo-img" src="{% static 'img/logo.png' %}" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% if request.session.userid == 1 %}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/category">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/userslist">Users List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/registerfreelancer">Add
+                            Freelancer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/showfreelancer">Freelancers
+                            List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                </ul>
+                {%else%}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/category">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="#">About Us</a>
+                    </li>
+                </ul>
+                {%endif%}
+                {%if request.session.userid%}
+                <a href="/logout" class="log-in">Log Out</a>
+                {%else%}
+                <a href="/log-in" class="log-in">Login</a>
+                {%endif%}
+            </div>
+        </div>
+    </nav>
+<body>
+    
+<div class="aboutpictureone" style="display: flex; justify-content: space-between; margin: 100px;">
+<div class="aboutpictureonediv" style="text-align: center; margin-top: 150px;">
+    <h1>
+        Who are we?
+    </h1 ><br>
+    
+    <p class="paraone" style="font-size: 28px; ">
+        In simple words, we're 
+        a <br>
+        bunch of young ambitious 
+        people <br>
+        who want to make life easier for others.<br>
+        We're here to help you with your 
+        household  tasks <br> and solving them together.
+        Our platform links residents <br>
+        and house owners 
+        with handy people with different specialities <br>
+        to help make it easier and more accessable for people on both ends.
+
+    </p>
+</div>
+    <div>
+        <img src="/main_app/static/img/abouting.jpg" alt="abouting" width="1000px">
+    </div>
+</div>
+<div class="aboutpicturetwo" >
+    <div style="text-align: center; margin-top: 150px;">
+        <h1>
+            Our vision
+        </h1 ><br>
+        
+        <p class="paratwo">
+            A better collaborative sustainable future together, <br> where people easily come together & make use of technology for a more comfortable life in Palestine  
+        </p>
+    </div>
+        <div>
+            <img src="/main_app/static/img/vision.png " alt="abouting" width="1000px">
+        </div>
+    </div>
+    <div class="aboutpicturethree" >
+        <div style="text-align: center; margin-top: 150px;">
+            <h1>
+                Our Goals
+            </h1 ><br>
+            
+            <p class="parathree" style="font-size: 28px; ">
+                Our goal is to get you the help<br> you need whenever you need,
+                to make it<br> accessable for you wherever you are 
+                with a click<br> of a botton, you'll have the help you need in no time <br> or effort,  but at the same time, to provied 
+                help for our workers <br> getting more access to the customers and the market, to be able to find jobs easier and faster 
+                by being available on the virtual reality. we can only achieve this with all of us working together.
+            </p>
+        </div>
+            <div>
+                <img src="/main_app/static/img/goals.png " alt="abouting" width="1000px">
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+    <script src="{% static 'js/vote.js' %}"></script>
+</body>
+
+</html>
+

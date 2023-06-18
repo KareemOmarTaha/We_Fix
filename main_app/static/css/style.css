@@ -205,3 +205,38 @@
 .white-space , .user_info , .user-table , .categories , .contact , .free-details ,  .list-cat   {
     height : 100vh;
 }
+
+/* About Us  */
+.aboutpictureone{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
+
+.aboutpictureonediv{
+    text-align: center;
+    margin-top: 150px;
+}
+
+.paraone{
+    font-size: 28px;
+}
+.aboutpicturetwo{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
+
+.paratwo{
+    font-size: 28px;
+}
+
+.aboutpicturethree{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
+
+.parathree{
+    font-size: 28px;
+}
