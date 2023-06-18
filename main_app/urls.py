@@ -26,5 +26,4 @@ urlpatterns = [
     path ('freedetails/<int:id>', views.free_details),
     path('like_freelancer/<int:id>', views.like_freelancer),
     path('dislike_freelancer/<int:id>', views.dislike_freelancer),
-
 ]
