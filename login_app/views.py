@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect , HttpResponse
 from . import models
 from django.contrib import messages
 from .models import User
@@ -47,3 +47,18 @@ def admin(request):
         return render (request , 'admin.html')
     else:
         return redirect('/')
+    
+
+# def create(request):
+#     if request.method == "POST":
+#         fname = request.POST['fname']
+#         lname = request.POST['lname']
+#         email = request.POST['email']
+#         password = request.POST['password']
+#         phone = request.POST['phone']
+#         address = request.POST['address']
+
+#         new_user = User(first_name = fname , last_name = lname , email = email , password= password , phone_number= phone , address = address )
+#         new_user.save()
+#         success = 'Account Registered Successfully ' + fname 
+#         return HttpResponse(success)
