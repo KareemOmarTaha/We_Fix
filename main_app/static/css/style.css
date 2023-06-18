@@ -141,19 +141,6 @@
     margin-top: 10px;
 }
 
-@media all and (max-width: 1000px) {
-    .card {
-        width: 90%;
-        margin: 1%;
-    }
-}
-
-@media all and (max-width: 720px) {
-    .vote {
-        width: 15%;
-    }
-}
-
 .calendar-img {
     width: 27px;
     margin-right: 5px;
@@ -202,7 +189,7 @@
 }
 
 
-.white-space , .user_info , .user-table , .categories , .contact , .free-details ,  .list-cat   {
+.white-space , .user_info , .user-table , .categories , .contact , .free-details ,  .list-cat , .footer_position  {
     height : 100vh;
 }
 
@@ -253,4 +240,9 @@
 
 .about-us {
     margin: 0 auto;
+}
+
+.bookbtn {
+    display: flex;
+    justify-content: space-between;
 }

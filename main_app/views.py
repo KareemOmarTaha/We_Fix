@@ -3,6 +3,9 @@ from . import models
 from login_app.models import User
 from main_app.models import Freelancer
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
+import requests
 
 def index (request):
     if 'userid' not in request.session:
@@ -174,3 +177,5 @@ def contact_us (request):
 
 def about_us (request):
     return render (request , 'aboutUS.html')
+
+

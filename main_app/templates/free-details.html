@@ -85,10 +85,18 @@
                 <h5>Contact Infromation : {{free_details.phone_number}}</h5>
                 <h6>Years of Experience : {{free_details.experience}} </h6>
             </div>
+            <div class="bookbtn">
                 <div class="vote">
                     <a href="/like_freelancer/{{ free_details.id }}"><img src="{% static 'img/vote-up.png' %}" alt="vote up" onmouseover="addShadow(this)" onmouseleave="removeShadow(this)"></a><span>{{ free_details.users_who_like.count }}</span>
                     <a href="/dislike_freelancer/{{ free_details.id }}"><img src="{% static 'img/vote-down.png' %}" alt="vote down" onmouseover="addDown(this)" onmouseleave="removeDown(this)"></a><span>{{ free_details.users_who_dislike.count }}</span> 
             </div>
+            <div>
+                <div>
+                    <a onmouseover='addShadow(this)' onmouseleave='removeShadow(this)' class="btn btn-warning" href="/sendemail">Book Freelancer</a>
+                </div>
+            </div>
+            </div>
+
         </div>
     </div>
     <div class="footer bg-warning">
