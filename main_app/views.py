@@ -166,3 +166,8 @@ def dislike_freelancer(request, id):
         if disliked_freelancer in logged_user.liked_freelancer.all():
             logged_user.liked_freelancer.remove(disliked_freelancer)
         return redirect(f'/freedetails/{disliked_freelancer.id}')
+
+
+def contact_us (request):
+    
+    return render(request , 'Contactus.html')

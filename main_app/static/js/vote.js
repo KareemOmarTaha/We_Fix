@@ -12,3 +12,8 @@ function addDown(element) {
 function removeDown(element) {
     element.classList.remove("down");
 }
+
+
+function alertFunction() {
+    alert ('YOU ARE THE ONLY ADMIN ! WE CANNOT LIVE WITHOUT YOU!')
+}

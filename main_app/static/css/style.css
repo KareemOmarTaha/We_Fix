@@ -42,19 +42,19 @@
     color: #ffc107;
 }
 
-.socail {
+#socail {
     display: flex;
     justify-content: flex-start;
     align-items: end;
 }
 
 .social-img {
-    margin-top:6%;
+    margin-top: 6%;
     margin-left: 1%;
     width: 40px;
 }
 
-#facebook{
+#facebook {
     width: 60px;
 }
 
@@ -67,12 +67,12 @@
     border-radius: 5px;
 }
 
-#edit_btn{
+#edit_btn {
     display: inline;
 }
 
 .delete_btn {
-    background-color:#dc3545;
+    background-color: #dc3545;
     border-radius: 5px;
     padding: 6px 10px 10px 10px;
     text-decoration: none;
@@ -82,18 +82,19 @@
 /* addfreelancer Page  */
 
 .head {
-text-align: center;
-color: #155263;
+    text-align: center;
+    color: #155263;
 }
 
 .free-img {
     width: 15%;
 }
+
 .free-logo {
     text-align: center;
 }
 
-.container{
+.container {
     border: 2px solid #155263;
     border-radius: 5px;
     padding: 2rem;
@@ -117,17 +118,17 @@ color: #155263;
     text-decoration: none;
 }
 
-.card-body h3  h4  h5 {
+.card-body h3 h4 h5 {
     color: #155263;
 }
 
 
 .free-details {
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
-#card_body > * {
+#card_body>* {
     color: #155263;
 }
 
@@ -139,46 +140,68 @@ justify-content: center;
     width: 10%;
     margin-top: 10px;
 }
+
 @media all and (max-width: 1000px) {
     .card {
         width: 90%;
         margin: 1%;
     }
 }
+
 @media all and (max-width: 720px) {
-.vote {
-    width: 15%;
+    .vote {
+        width: 15%;
+    }
 }
-}
+
 .calendar-img {
     width: 27px;
     margin-right: 5px;
     padding-bottom: 7px;
 }
+
 .vote img {
     width: 30px;
 }
+
 .vote span {
     font-size: 0.8rem;
 }
-.shadow{
+
+.shadow {
     position: relative;
     bottom: 5px;
 }
-.down{
+
+.down {
     position: relative;
     top: 5px;
 }
-.settings_vote{
+
+.settings_vote {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 
-.contact{
+.contact {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.contact-card {
+    color: #ffc107;
+    font-size: 40px;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+
+.white-space , .user_info , .user-table , .categories , .contact , .free-details ,  .list-cat   {
+    height : 100vh;
 }

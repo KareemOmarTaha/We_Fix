@@ -104,9 +104,10 @@ def category_modles():
     return Category.objects.all()
 
 def list_cat_models(id):
-    return Freelancer.objects.filter(category = Category.objects.get(id=id))
+    a = [1,3,4,5,6,7]
+    return Freelancer.objects.filter(category = Category.objects.get(id=id)).exclude(id__in = a)
 
 def free_details_models(id):
     return Freelancer.objects.get(id = id)
-
+    
 
