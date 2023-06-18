@@ -209,34 +209,48 @@
 /* About Us  */
 .aboutpictureone{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-around;
     margin: 100px;
 }
 
-.aboutpictureonediv{
-    text-align: center;
-    margin-top: 150px;
-}
-
 .paraone{
-    font-size: 28px;
+    font-size: 20px;
+    width: 700px;
 }
 .aboutpicturetwo{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 100px;
 }
 
 .paratwo{
-    font-size: 28px;
+    font-size: 20px;
+    width: 700px;
 }
 
 .aboutpicturethree{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 100px;
 }
 
 .parathree{
-    font-size: 28px;
+    font-size: 20px;
+    width: 700px;
+}
+
+.pic1 {
+    width: 100%;
+}
+
+.pic2 {
+    width: 100%;
+}
+
+.pic3 {
+    width: 100%;
+}
+
+.about-us {
+    margin: 0 auto;
 }

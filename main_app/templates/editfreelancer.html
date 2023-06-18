@@ -12,6 +12,71 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-warning">
+        <div class="container-fluid">
+            <a href="/"><img class="logo-img" src="{% static 'img/logo.png' %}" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% if request.session.userid == 1 %}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/category">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/userslist">Users List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/registerfreelancer">Add
+                            Freelancer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/showfreelancer">Freelancers
+                            List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
+                    </li>
+                </ul>
+                {%else%}
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/category">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
+                    </li>
+                </ul>
+                {%endif%}
+                {%if request.session.userid%}
+                <a href="/logout" class="log-in">Log Out</a>
+                {%else%}
+                <a href="/log-in" class="log-in">Login</a>
+                {%endif%}
+            </div>
+        </div>
+    </nav>
     <div class="free-logo">
         <a href="/"><img src="{%static 'img/Logo.png'%}" alt="logo" class="free-img"></a>
     </div>

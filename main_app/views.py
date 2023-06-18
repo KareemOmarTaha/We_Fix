@@ -171,3 +171,6 @@ def dislike_freelancer(request, id):
 def contact_us (request):
     
     return render(request , 'Contactus.html')
+
+def about_us (request):
+    return render (request , 'aboutUS.html')
