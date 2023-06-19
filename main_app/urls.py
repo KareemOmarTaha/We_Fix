@@ -28,7 +28,7 @@ urlpatterns = [
     path('dislike_freelancer/<int:id>', views.dislike_freelancer),
     path ('contact' , views.contact_us),
     path ('contactform' , views.contact_f) , 
-    path ('aboutUS' , views.about_us), 
-
-
+    path ('aboutUS' , views.about_us),
+    path ('showcomp' , views.show_comps) , 
+    path('complain', views.complaint),
 ]
