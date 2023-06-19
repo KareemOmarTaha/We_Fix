@@ -28,5 +28,6 @@ urlpatterns = [
     path('dislike_freelancer/<int:id>', views.dislike_freelancer),
     path ('contact' , views.contact_us),
     path ('aboutUS' , views.about_us), 
+    path ('search/' , views.Serach_Request), 
 
 ]

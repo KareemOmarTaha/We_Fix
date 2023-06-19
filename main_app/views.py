@@ -3,7 +3,7 @@ from . import models
 from login_app.models import User
 from main_app.models import Freelancer
 from django.contrib import messages
-
+from django.http import JsonResponse
 def index (request):
     if 'userid' not in request.session:
         return render(request , "home.html")
@@ -176,3 +176,26 @@ def about_us (request):
     return render (request , 'aboutUS.html')
 
 
+
+def Serach_Request(request):
+    if request.is_ajax():
+        freelancer = request.POST.get('freelancer')
+        print(freelancer)
+        query = Freelancer.objects.filter(first_name__icontains=freelancer)
+        if len(query) > 0 :
+            data = [] 
+            for position in query:
+                Items = {
+                    "PRIMARY_KEY" :position.pk,
+                    "first_name" : position.first_name,
+                    "phone" : position.phone_number,
+                    "image_category":position.category.image
+                    
+                }
+                data.append(Items)
+            res = data
+        else:
+            res = 'NO Freelancer Found....'
+                
+        return JsonResponse({'data': res })
+    return JsonResponse({})
