@@ -114,7 +114,7 @@
     border: 2px solid #155263;
     border-radius: 5px;
     padding: 1rem;
-    margin-bottom: 10rem;    
+    margin-bottom: 10rem;
 }
 
 .see_more_btn {
@@ -193,39 +193,47 @@
 }
 
 
-.white-space , .user_info , .user-table , .categories , .contact , .free-details ,  .list-cat , .footer_position  {
-    height : 100vh;
+.white-space,
+.user_info,
+.user-table,
+.categories,
+.contact,
+.free-details,
+.list-cat,
+.footer_position {
+    height: 100vh;
 }
 
 /* About Us  */
-.aboutpictureone{
-    display: flex;
-    justify-content:space-around;
-    margin: 100px;
-}
-
-.paraone{
-    font-size: 20px;
-    width: 700px;
-}
-.aboutpicturetwo{
+.aboutpictureone {
     display: flex;
     justify-content: space-around;
     margin: 100px;
 }
 
-.paratwo{
+.paraone {
     font-size: 20px;
     width: 700px;
 }
 
-.aboutpicturethree{
+.aboutpicturetwo {
     display: flex;
     justify-content: space-around;
     margin: 100px;
 }
 
-.parathree{
+.paratwo {
+    font-size: 20px;
+    width: 700px;
+}
+
+.aboutpicturethree {
+    display: flex;
+    justify-content: space-around;
+    margin: 100px;
+}
+
+.parathree {
     font-size: 20px;
     width: 700px;
 }
@@ -253,10 +261,10 @@
 
 .search-container {
     position: relative;
-  display: inline-block;
+    display: inline-block;
 }
 
-  .search-container input[type=text] {
+.search-container input[type=text] {
     padding: 6px;
     margin-top: 8px;
     font-size: 17px;
@@ -264,34 +272,37 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 5px 50px rgb(223, 222, 222);
-  }
-  
-  
+}
+
+
 .search-container button {
-  float: right;
-  
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
+    float: right;
+
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
 }
 
 .hidden-visible {
- display: none;
+    display: none;
 }
-.test{
+
+.test {
     background-color: red;
 }
+
 .item {
-text-decoration: none;
+    text-decoration: none;
 }
+
 .result-card {
     z-index: 1;
     /* width: 500px; */
-  position: absolute;
+    position: absolute;
     background: #f2f0f0;
     width: 300px;
     margin-top: 5px;
@@ -299,7 +310,7 @@ text-decoration: none;
     padding: 5px;
     border-radius: 10px;
     box-shadow: 0 8px 8px rgb(139, 139, 139);
-}   
+}
 
 .imageCategory {
     margin: 5px;
@@ -311,25 +322,25 @@ text-decoration: none;
 
 .cardItemSearch {
     display: flex;
-    
-  }
-  .namewithPhone {
+
+}
+
+.namewithPhone {
     display: block;
     margin-top: 5px;
-  }
+}
 
-  .namewithPhone p {
+.namewithPhone p {
     color: green;
-  }
+}
 
 .contactform {
-    width : 800px;
+    width: 800px;
     margin: 0 auto;
- }
+}
 
- .box{
+.box {
     display: flex;
     justify-content: space-between;
     align-items: center;
- }
-
+}

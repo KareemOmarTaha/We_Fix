@@ -4,6 +4,9 @@ from login_app.models import User
 from main_app.models import Freelancer
 from django.contrib import messages
 from django.http import JsonResponse
+from django.core.mail import send_mail
+from django.conf import settings
+
 def index (request):
     if 'userid' not in request.session:
         return render(request , "home.html")
@@ -209,3 +212,10 @@ def complaint (request):
     models.complaint_models(request)
     return redirect ('/')
 
+def send(request , id):
+    send_mail(
+        subject="Booked Successfully",
+        message="You have successfully booked this freelancer",
+        from_email=settings.EMAIL_HOST_USER,
+        recipient_list=[User.objects.get(id=id).email])
+    return redirect(request.META['HTTP_REFERER'])

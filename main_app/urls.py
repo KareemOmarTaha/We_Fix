@@ -33,4 +33,5 @@ urlpatterns = [
     path ('aboutUS' , views.about_us),
     path ('showcomp' , views.show_comps) , 
     path('complain', views.complaint),
+    path ('sendemail/<int:id>' , views.send) , 
 ]
