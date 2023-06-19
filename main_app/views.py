@@ -175,4 +175,6 @@ def contact_us (request):
 def about_us (request):
     return render (request , 'aboutUS.html')
 
-
+def contact_f(request):
+    models.contactus_form(request)
+    return redirect('/')
