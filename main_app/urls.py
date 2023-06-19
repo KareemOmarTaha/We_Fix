@@ -29,5 +29,8 @@ urlpatterns = [
     path ('contact' , views.contact_us),
     path ('aboutUS' , views.about_us), 
     path ('search/' , views.Serach_Request), 
-
+    path ('contactform' , views.contact_f) , 
+    path ('aboutUS' , views.about_us),
+    path ('showcomp' , views.show_comps) , 
+    path('complain', views.complaint),
 ]

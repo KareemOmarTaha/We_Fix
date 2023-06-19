@@ -175,7 +175,9 @@ def contact_us (request):
 def about_us (request):
     return render (request , 'aboutUS.html')
 
-
+def contact_f(request):
+    models.contactus_form(request)
+    return redirect('/')
 
 def Serach_Request(request):
     if request.is_ajax():
@@ -199,3 +201,11 @@ def Serach_Request(request):
                 
         return JsonResponse({'data': res })
     return JsonResponse({})
+
+def show_comps(request):
+    return render (request , 'complaint.html')
+
+def complaint (request):
+    models.complaint_models(request)
+    return redirect ('/')
+

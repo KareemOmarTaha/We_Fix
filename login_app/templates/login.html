@@ -54,14 +54,16 @@
               <button type="submit" class="btn btn-warning">Register</button>
         </form>
         <!-- <h4 class="text-success text-center"></h4> -->
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
         </div>
+        <div class="errors">
+          {% if messages %}
+    <ul class="messages">
+        {% for error in messages %}
+        <li {% if error.tags %} class="{{ error.tags }}" {% endif %}>{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
         <div class="login">
             <form action="/loging-in" method="post">
                 {%csrf_token%}
@@ -77,13 +79,6 @@
                 </div>
                 <button type="submit" class="btn btn-warning">Log-in</button>
               </form>
-              {% if messages %}
-              <ul class="messages">
-                  {% for error in messages %}
-                  <li {% if error.tags %} class="{{ error.tags }}" {% endif %}>{{ error }}</li>
-                  {% endfor %}
-              </ul>
-              {% endif %}
     </div>
 </div>
     

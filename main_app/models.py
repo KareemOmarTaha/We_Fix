@@ -36,6 +36,17 @@ class Freelancer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     objects = FreelancerManager()
 
+class ContactUs(models.Model):
+    first_name = models.CharField(max_length=45)
+    last_name = models.CharField(max_length=45)
+    email = models.CharField(max_length=45)
+    message = models.TextField(max_length=45)
+
+
+class complaint(models.Model):
+    firstname = models.CharField(max_length=45)
+    lastname = models.CharField(max_length=45)
+    complaint = models.CharField(max_length=255)
 
 def user_info(request):
     return User.objects.get(id = request.session['userid'])
@@ -110,4 +121,9 @@ def list_cat_models(id):
 def free_details_models(id):
     return Freelancer.objects.get(id = id)
     
-
+def contactus_form(request):
+    ContactUs.objects.create(first_name = request.POST['fname'] , last_name = request.POST['lname'], email = request
+    .POST['email'], message= request.POST['message'])
+    
+def complaint_models(request):
+    complaint.objects.create(firstname=request.POST['firstname'], lastname=request.POST['lastname'], complaint= request.POST['complaint'])
