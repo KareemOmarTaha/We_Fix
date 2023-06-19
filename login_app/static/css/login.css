@@ -23,3 +23,8 @@
     text-align: center;
     color: #155263;
 }
+
+.errors {
+    border: #ffc107;
+    margin-top: 100px;
+}
