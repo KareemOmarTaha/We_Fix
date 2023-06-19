@@ -251,7 +251,77 @@
     justify-content: space-between;
 }
 
-/* contact form */
+.search-container {
+    position: relative;
+  display: inline-block;
+}
+
+  .search-container input[type=text] {
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0 5px 50px rgb(223, 222, 222);
+  }
+  
+  
+.search-container button {
+  float: right;
+  
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.hidden-visible {
+ display: none;
+}
+.test{
+    background-color: red;
+}
+.item {
+text-decoration: none;
+}
+.result-card {
+    z-index: 1;
+    /* width: 500px; */
+  position: absolute;
+    background: #f2f0f0;
+    width: 300px;
+    margin-top: 5px;
+    max-height: 800px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 8px 8px rgb(139, 139, 139);
+}   
+
+.imageCategory {
+    margin: 5px;
+    height: 60px;
+    width: 100px;
+    box-shadow: 0 8px 8px black;
+    border-radius: 10px;
+}
+
+.cardItemSearch {
+    display: flex;
+    
+  }
+  .namewithPhone {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .namewithPhone p {
+    color: green;
+  }
+
 .contactform {
     width : 800px;
     margin: 0 auto;
@@ -262,3 +332,4 @@
     justify-content: space-between;
     align-items: center;
  }
+

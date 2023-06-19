@@ -27,6 +27,8 @@ urlpatterns = [
     path('like_freelancer/<int:id>', views.like_freelancer),
     path('dislike_freelancer/<int:id>', views.dislike_freelancer),
     path ('contact' , views.contact_us),
+    path ('aboutUS' , views.about_us), 
+    path ('search/' , views.Serach_Request), 
     path ('contactform' , views.contact_f) , 
     path ('aboutUS' , views.about_us),
     path ('showcomp' , views.show_comps) , 
