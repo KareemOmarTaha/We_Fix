@@ -215,7 +215,7 @@ def complaint (request):
 def send(request , id):
     send_mail(
         subject="WeFix Booking Freelancer",
-        message="Dear [Customer's Name],We are delighted to inform you that your booking for a Freelancer has been successfully confirmed. We appreciate your choice in selecting our service, and we assure you of an experience full of quality and efficiency.",
+        message="Dear Customer,We are delighted to inform you that your Freelancer booking opertation has been successfully confirmed. We appreciate your choice in selecting our service, and we assure you an experience full of quality and efficiency.",
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=[User.objects.get(id=id).email])
     return redirect(request.META['HTTP_REFERER'])

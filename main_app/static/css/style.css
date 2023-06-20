@@ -62,7 +62,7 @@
 /* profile page  */
 
 .user_info {
-    margin: 20px;
+    margin: 20px 20px 155px 20px;
     padding: 20px;
     border: 2px solid #155263;
     border-radius: 5px;
@@ -130,6 +130,8 @@
 .free-details {
     display: flex;
     justify-content: center;
+    margin-bottom: 220px;
+    margin-top: 20px;
 }
 
 #card_body>* {
@@ -1194,4 +1196,3 @@ body{margin-top:20px;}
 .table-stats .table-line-plus .status-social-icon {
 	color: #a75d54;
 }
-Similar snippets

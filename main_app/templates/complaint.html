@@ -59,7 +59,7 @@
                                 List</a>
                         </li>
                         <li class=" 1 nav-item">
-                            <a id="nav-link" class="nav-link active" aria-current="page" href="//aboutUS">About Us</a>
+                            <a id="nav-link" class="nav-link active" aria-current="page" href="/#about_US">About Us</a>
                         </li>
                     </ul>
                     {%else%}
@@ -74,7 +74,7 @@
                             <a id="nav-link" class="nav-link active" aria-current="page" href="/category">Categories</a>
                         </li>
                         <li class="nav-item">
-                            <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
+                            <a id="nav-link" class="nav-link active" aria-current="page" href="/#about_US">About Us</a>
                         </li>
                     </ul>
                     {%endif%}
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </nav>
-        <div style="display: flex; justify-content: center; margin-top: 300px;">
+        <div style="display: flex; justify-content: center; margin-bottom: 50px; margin-top: 300px;">
             <div class="complaining">
                 <form action="/complain" method="post">
                     {% csrf_token %}
@@ -105,7 +105,7 @@
                     <input name="lastname" type="text">
         
                     <h3>
-                        complaints
+                        Feedback
                     </h3>
                     <textarea name="complaint" id="" cols="30" rows="10"></textarea><br>
                     <button class="btn btn-warning">Send</button>

@@ -17,3 +17,7 @@ function removeDown(element) {
 function alertFunction() {
     alert ('YOU ARE THE ONLY ADMIN ! WE CANNOT LIVE WITHOUT YOU!')
 }
+
+function myfunction () {
+    alert ('Freelancer Booked')
+}

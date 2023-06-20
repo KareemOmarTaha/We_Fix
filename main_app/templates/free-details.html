@@ -61,7 +61,7 @@
                         <a id="nav-link" class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/#about_US">About Us</a>
                     </li>
                 </ul>
                 {%else%}
@@ -79,7 +79,7 @@
                         <a id="nav-link" class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
+                        <a id="nav-link" class="nav-link active" aria-current="page" href="/#about_US">About Us</a>
                     </li>
                 </ul>
                 {%endif%}
@@ -115,7 +115,7 @@
             </div>
             <div>
                 <div>
-                    <a onmouseover='addShadow(this)' onmouseleave='removeShadow(this)' class="btn btn-warning" href="/sendemail/{{request.session.userid}}">Book Freelancer</a>
+                    <a onclick="myfunction()" onmouseover='addShadow(this)' onmouseleave='removeShadow(this)' class="btn btn-warning" href="/sendemail/{{request.session.userid}}">Book Freelancer</a>
                 </div>
             </div>
             </div>
