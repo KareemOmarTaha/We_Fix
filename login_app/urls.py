@@ -5,5 +5,4 @@ urlpatterns = [
     path ('register' , views.register) , 
     path ('loging-in' , views.logining) , 
     path ('admin' , views.admin), 
-    # path ('create' , views.create , name = "create") , 
 ]

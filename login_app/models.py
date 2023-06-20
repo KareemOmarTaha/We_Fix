@@ -47,7 +47,7 @@ class UserManager(models.Manager):
             errors["lname"] = "Last Name should be at least 3 characters"
         elif not LAST_NAME_REGEX.match(postData['lname']):
             errors["lname"] = "Last Name only conatains letter"
-
+        
         return errors
 
 # Login Validation
@@ -56,9 +56,8 @@ class UserManager(models.Manager):
         errors = {}
         if len(postData['person_email']) < 1:
             errors['person_email'] = 'Email is required!'
-
         if len(postData['password_email']) < 1:
-            errors['password_email'] = 'Password is required!'
+            errors['password_email'] = 'password is required!'
         return errors
 
 class User(models.Model):

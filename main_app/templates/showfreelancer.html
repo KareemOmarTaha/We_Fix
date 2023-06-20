@@ -2,14 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WeFix</title>
-    {%load static%}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeFix</title>
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- {% block scripts %} -->
+  <script src="{%  static 'js/main.js' %}" defer></script>
+  <!-- {% endblock scripts %} -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    
 </head>
+
+<body>
+  {% block content %}
+  {% endblock content %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  {% block javascript %}
+  {% endblock javascript %}
 
 <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container-fluid">
@@ -47,6 +63,15 @@
                     <a id="nav-link" class="nav-link active" aria-current="page" href="/aboutUS">About Us</a>
                 </li>
             </ul>
+            <div class="search-container">
+                <form id="search-form" action="/action_page.php">
+                  {% csrf_token %}
+                  <input type="text" id="search-input" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <div id="result-serach" class="result-card hidden-visible">
+                </div>
+              </div>
             {%if request.session.userid%}
             <a href="/logout" class="log-in">Log Out</a>
             {%else%}
@@ -56,29 +81,63 @@
     </div>
 </nav>
 
-<div class="user-table">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for freelancer in freelancers %}
-            <tr>
-                <th scope="row">{{freelancer.id}}</th>
-                <td>{{freelancer.first_name}}</td>
-                <td>{{freelancer.last_name}}</td>
-                <td><a href="/editfreelancer/{{freelancer.id}}">Edit</a> | <a
-                        href="/deletefreelancer/{{freelancer.id}}">Delete</a></td>
-            </tr>
-            {%endfor%}
-        </tbody>
-    </table>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box clearfix">
+			<div class="table-responsive">
+				<table class="table user-list">
+					<thead>
+						<tr>
+							<th><span>User</span></th>
+							<th><span>Created</span></th>
+							<th class="text-center"><span>Status</span></th>
+							<th><span>Email</span></th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+                        {% for freelancer in freelancers %}
+						<tr>
+							<td>
+                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="">
+								<a href="#" class="user-link">{{freelancer.first_name}} {{freelancer.last_name}} </a>
+								<span class="user-subhead">Registered</span>
+							</td>
+							<td>
+								{{freelancer.created_at}}
+							</td>
+							<td class="text-center">
+								<span class="label label-default">Active</span>
+							</td>
+							<td>
+								<a href="#">{{freelancer.phone_number}}</a>
+							</td>
+							<td style="width: 20%;">
+								<a href="/editfreelancer/{{freelancer.id}}" class="table-link">
+									<span class="fa-stack">
+										<i class="fa fa-square fa-stack-2x"></i>
+										<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+								<a href="/deletefreelancer/{{freelancer.id}}" class="table-link danger">
+									<span class="fa-stack">
+										<i class="fa fa-square fa-stack-2x"></i>
+										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+							</td>
+						</tr>
+                        {%endfor%}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
+</div>
+
 <div class="footer bg-warning">
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-0 border-top">
         <div class="col-md-4 d-flex align-items-center">
